@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record	id="view_search_add_note_to_coa" model="ir.ui.view">
+<field name="name">view.chart.add.additionalNote</field>
+<field name="model">account.account</field>
+<field name="inherit_id" ref="account.view_account_form"/>
+<field name="arch" type="xml">
+
+   <field name="code" position="after">
+           <field name="account_number"/>
+   </field>
+
+ </field>
+ </record>
+</odoo>
