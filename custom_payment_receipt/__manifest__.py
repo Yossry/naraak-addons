@@ -6,7 +6,7 @@
     'website': 'https://www.expertsintech.com/',
     'license': 'Other proprietary',
     'depends': [
-        'account', 'stock','internal_payment_transfer_app',
+        'account','internal_payment_transfer_app',
     ],
     'data': [
         'data/report_paperformat_data.xml',
