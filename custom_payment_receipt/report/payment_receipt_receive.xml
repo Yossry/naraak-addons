@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="payment_voucher_receive_body">
+            <link rel="stylesheet" href="custom_payment_receipt/static/src/css/style.css"></link>
+            <div class="header">
+                <span>This is a header</span>
+            </div>
+
+         <body>
+
+
+                  <div class = "parent clearfix" >
+
+
+                    <p class="center heading">سند قبض نقدي</p>
+                    <p class="center"><t t-esc="o.name"/></p>
+                    <p class="center"><t t-esc="o.payment_date"/></p>
+
+
+                      <div class ="headingcontainer clearfix">
+
+
+                    <div class="headingltr clearfix">
+                      <span>System Date and Time  :</span>
+                      <span><t t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></span>
+                      <br/>
+                    </div>
+
+                      <div class = "headingcenter clearfix"/>
+
+                    <div class="headingrtl inline clearfix">
+                         <span>تاريخ و وقت النظام     : </span>
+                         <span><t t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></span>
+                    </div>
+
+                      </div>
+
+
+
+                    <div class = "interior clearfix">
+
+                      <div class="first clearfix">
+                        <p>Received from</p>
+
+                         <p>.Account No</p>
+
+                         <p> The Sum Of </p>
+                         <p>&amp;nbsp;</p>
+                          <p>Being</p>
+                      </div>
+
+                      <div class="second clearfix">
+                         <p> <t t-esc="o.from_account_id.name"/></p>
+
+                         <p><t t-esc="o.to_account_id.code"/></p>
+
+                        <p> <t t-esc="o.amount"/></p>
+
+                        <p><t t-esc="o.num_word"/></p>
+
+                          <p><t t-esc="o.communication"/></p>
+                      </div>
+
+                      <div class="third clearfix">
+                         <p> إستلمنا من السادة </p>
+
+                       <p> رقم الحساب </p>
+
+                        <p>   مبلغ وقدره</p>
+                          <p>&amp;nbsp;</p>
+                        <p> وذالك قيمة</p>
+                      </div>
+
+                    </div>
+
+
+                    <div class ="secondinterior clearfix">
+                        <div class="first clearfix">
+                        <span>Bank \ Cash</span>
+                      </div>
+
+                      <div class="second clearfix">
+                         <span> <t t-esc="o.to_account_id.name"/>&amp;nbsp;&amp;nbsp;<t t-esc="o.to_account_id.code"/> </span>
+                      </div>
+
+                      <div class="third clearfix">
+                         <span>الصندوق \ البنك</span>
+                      </div>
+
+                    </div>
+
+                    <div class = "thirdinterior clearfix">
+                      <div class ="stamp">
+                        <p>ختم الصندوق</p>
+                      </div>
+
+                      <div class="longtext clearfix">
+                        <p>لا يعتمد سند القبض بدون ختم الصندوق الخاص بالشركة</p>
+                      </div>
+
+                    </div>
+                    <div class = "fourthinterior clearfix">
+                      <div class="modeer">
+                        <p>المدير المالي</p>
+                      </div>
+
+                      <div class="account clearfix">
+                        <p>المحاسب</p>
+                      </div>
+
+                      <div class="recieve clearfix">
+                        <p> المستلم</p>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+</body>
+
+
+
+        </template>
+
+
+        <template id="custom_icon_receive">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t>
+                        <div class="page">
+                            <t t-call="custom_payment_receipt.payment_voucher_receive_body" t-lang="o.partner_id.lang"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <!--        Customer Invoice-->
+        <report
+                id="payment_voucher_give"
+                model="account.payment"
+                string="سند صرف"
+                report_type="qweb-pdf"
+                name="custom_payment_receipt.custom_icon_give"
+                file="custom_payment_receipt.custom_icon_give"
+                menu="True"
+                print_report_name="'سند صرف'"
+        />
+
+        <record id="payment_voucher_give" model="ir.actions.report">
+            <field name="paperformat_id" ref="paperformat_euro_give"/>
+        </record>
+
+
+    </data>
+</odoo>

@@ -12,4 +12,18 @@
 
  </field>
  </record>
+
+
+<record	id="view_search_add_note_to_coa_list" model="ir.ui.view">
+<field name="name">view.chart.add.additionalNote.list</field>
+<field name="model">account.account</field>
+<field name="inherit_id" ref="account.view_account_list"/>
+<field name="arch" type="xml">
+
+     <field name="code" position="after">
+           <field name="account_number"/>
+   </field>
+
+ </field>
+ </record>
 </odoo>

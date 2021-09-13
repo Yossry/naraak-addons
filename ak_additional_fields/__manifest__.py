@@ -12,6 +12,7 @@
     'depends': ['base', 'account'],
     'data': [
       'views/chart_of_account_view.xml',
+       'views/altNameView.xml',
     ],
     'demo': [],
     "external_dependencies": {},

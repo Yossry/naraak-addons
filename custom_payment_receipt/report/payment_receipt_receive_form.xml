@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <!--        Customer Invoice-->
+        <report
+                id="payment_voucher_receive"
+                model="account.payment"
+                string="سند قبض"
+                report_type="qweb-pdf"
+                name="custom_payment_receipt.custom_icon_receive"
+                file="custom_payment_receipt.custom_icon_receive"
+                menu="True"
+                print_report_name="'سند قبض'"
+        />
+
+        <record id="payment_voucher_receive" model="ir.actions.report">
+            <field name="paperformat_id" ref="paperformat_euro_receive"/>
+        </record>
+
+
+    </data>
+</odoo>
